@@ -1,1 +1,51 @@
-#E6-1 部件风格
+#E6-1 部件风格-改变背景
+
+from tkinter import *
+'''
+尝试用类实现所有控件的处理
+class Enter_widgets:
+  def __init__(self):
+    self.widget
+'''
+
+#以下函数导致事件未发生时变化就产生，即使事件换为Button-1也是一样
+'''
+def Enter_widgets(widget):
+  widget['bg']='#{:02X}{:02X}{:02X}'.format(10,10,255)
+'''
+
+#以下代码仅能绑定一个控件
+
+def Enter_widget1(event):
+  lb1['bg']='#{:02X}{:02X}{:02X}'.format(10,10,255)
+
+def Enter_widget2(event):
+  bt1['bg']='#{:02X}{:02X}{:02X}'.format(10,10,255)
+
+def Leave_widget1(event):
+  lb1['bg']='SystemButtonFace'
+
+def Leave_widget2(event):
+  bt1['bg']='SystemButtonFace'
+
+'''
+class Enter_widgets:
+  def __init__(self,widget):
+    self.widget=widget
+  def change_bg():
+    self.widget['bg']='#{:02X}{:02X}{:02X}'.format(10,10,255)
+'''
+
+root=Tk()
+
+lb1=Label(text='Label background color to change')
+lb1.bind('<Enter>',Enter_widget1)
+lb1.bind('<Leave>',Leave_widget1)
+bt1=Button(text='Button')
+bt1.bind('<Enter>',Enter_widget2)
+bt1.bind('<Leave>',Leave_widget2)
+
+lb1.pack()
+bt1.pack()
+
+root.mainloop()
