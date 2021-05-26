@@ -1,0 +1,30 @@
+#E5-1 组件配置
+
+from tkinter import *
+
+root=Tk()
+
+def lb1_display():
+  s='Hello'
+  lb1.config(text=s)
+  
+def lb_color():
+  lb1['fg']='blue' #改变文字颜色，使用非configure方法，注意方括号及单引号
+  
+lb1=Label()
+bt1=Button(text='Hello',command=lb1_display)
+bt2=Button(text='Change color',command=lb_color)
+bt3=Button(text='Quit',command=root.quit) #无法关闭窗口
+
+lb1.pack()
+bt1.pack()
+bt2.pack()
+bt3.pack()
+
+#获取属性值：cget()方法及[]
+print(bt1.cget('fg'))
+print(bt1['fg']) #使用非cget方法获取属性值
+print(lb1.keys()) #输出所有属性（options）
+
+root.mainloop()
+
