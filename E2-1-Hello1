@@ -1,0 +1,9 @@
+#E2-1 基本界面1
+
+from tkinter import *
+
+root=Tk()
+w=Label(root,text='Hello, world!') #注意root
+w.pack()
+
+root.mainloop() #注意root
