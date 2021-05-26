@@ -1,0 +1,14 @@
+#E7-1 事件绑定-记录鼠标点击位置
+
+from tkinter import *
+
+root=Tk()
+
+def callback(event):
+  print('Clicked at:',event.x,event.y)
+  
+frm1=Frame(root, width=100, height=100)
+frm1.bind('<Button-1>',callback)
+frm1.pack()
+
+root.mainloop()
