@@ -1,0 +1,14 @@
+#E7-2 拖动画布
+
+from tkinter import *
+
+def move_cvs(event):
+  cvs1[x]=event.x_root
+  cvs1[y]=evetn.y_root
+
+root=Tk()
+
+cvs1=Canvas(width=600,height=600)
+cvs1.create_rectangle(
+
+root.mainloop()
