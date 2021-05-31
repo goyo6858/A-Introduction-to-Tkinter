@@ -8,3 +8,4 @@ E5-1:部件的配置
 E6-1
 E7-1:事件绑定（记录电机次数）
 E7-2:Protocol Handler：关闭窗口
+E8-21:Toplevel window:
