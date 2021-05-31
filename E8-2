@@ -1,0 +1,40 @@
+#E8-2 工具栏-基于frame和button
+
+from tkinter import *
+
+def callback1():
+  print('callback1 function called')
+
+root=Tk()
+
+menu1=Menu(root) #创建实体——菜单条？
+root.config(menu=menu1) #放置于root，此时窗口变长，菜单被放置于root窗口内。无需使用坐标管理使之显示。
+
+filemenu=Menu(menu1) #创建另一个实体，与menu1关系？在menu bar上放置一个菜单？
+menu1.add_cascade(label='File',menu=filemenu) #出现File菜单
+filemenu.add_command(label='New', command=callback1)
+filemenu.add_command(label='Save', command=callback1)
+filemenu.add_separator()
+filemenu.add_command(label='Exit',command=callback1)
+
+editmenu=Menu(menu1) #尝试增加菜单
+menu1.add_cascade(label='Edit',menu=editmenu)
+
+helpmenu=Menu(menu1) #增加菜单
+menu1.add_cascade(label='Help',menu=helpmenu)
+helpmenu.add_command(label='About',command=callback1)
+
+#创建工具栏
+
+def callback2():
+  print('Tool bar functions called')
+
+toolbar=Frame(root)
+bt_toolbar1=Button(toolbar,text='Function1',command=callback2)
+bt_toolbar2=Button(toolbar,text='Function2',command=callback2)
+bt_toolbar1.pack(side=LEFT,padx=2,pady=2)
+bt_toolbar2.pack(side=LEFT,padx=2,pady=2)
+
+toolbar.pack(side=TOP, fill=X)
+
+root.mainloop()
