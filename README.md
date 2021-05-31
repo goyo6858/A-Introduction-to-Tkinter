@@ -11,3 +11,5 @@ E7-2:Protocol Handler：关闭窗口
 E8-0:Toplevel window:
 E8-1:菜单
 E8-2:工具栏tool bar
+E8-3:状态栏
+
