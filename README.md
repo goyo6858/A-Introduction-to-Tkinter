@@ -10,3 +10,4 @@ E7-1:事件绑定（记录电机次数）
 E7-2:Protocol Handler：关闭窗口
 E8-0:Toplevel window:
 E8-1:菜单
+E8-2:工具栏tool bar
