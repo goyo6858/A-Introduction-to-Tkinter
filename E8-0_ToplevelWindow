@@ -1,0 +1,9 @@
+#E8-0 Toplevel Window
+
+from tkinter import *
+
+root=Tk()
+
+sub_w1=Toplevel()
+
+root.mainloop()
