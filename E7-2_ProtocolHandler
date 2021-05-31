@@ -4,13 +4,12 @@ from tkinter import *
 #import tkMessageBox #This is new - 可能是升级造成的差异，产生报错："no moduel named tkMessageBox"
 from tkinter.messagebox import *
 
-
 def callback(): #没有传递参数Event
-  a=askokcancel('QUIT','Do you really wish to quit?'):
-  if a=True:  
+  a=askokcancel('QUIT','Do you really wish to quit?')
+  if a==True:  
     root.destroy()
-
+    
 root=Tk()
-root.protocol('WM_DELETE_WINDW',callback)
+root.protocol('WM_DELETE_WINDOW',callback1)
 
 root.mainloop()
