@@ -1,0 +1,29 @@
+#E9-1 基于类建立对话框
+
+from tkinter import *
+
+class MyDialog:
+  def __init__(self,parent):
+  
+    top=self.top=Toplevel(parent) #top不是公共变量？
+    
+    Label(top,text='Value').pack()
+    
+    self.e=Entry(top)
+    self.e.pack(padx=5) #padx=5?
+    
+    b=Button(top,text='OK',command=self.ok)
+    b.pack(pady=5) #pady=5
+
+  def ok(self):
+    print('Value is',self.e.get())
+    self.top.destroy()
+
+root=Tk()
+Button(root,text='Hello').pack()
+root.update() #update()的功能？
+
+d=MyDialog(root)
+
+root.mainloop()
+    
