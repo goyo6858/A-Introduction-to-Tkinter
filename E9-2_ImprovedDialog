@@ -1,0 +1,32 @@
+#E9-2 改善的对话窗口
+
+from tkinter import *
+import os #OS?
+
+class Dialog(Toplevel): #类的继承？
+  
+  def __init__(self,parent,title=none): #title?默认值为none，需要传递参数
+    Toplevel.__init__(self,parent)
+    self.transient(parent) #transient？
+    
+    if title: #?tile不为none?
+      self.title(title) #?
+    
+    self.parent=parent
+    self.result=none
+    
+    body=Frame(self) #不是self.body?仅是变量？
+    self.initial_focus=self.body(body)
+    body.pack(padx=5,pady=5)
+    
+    self.buttonbox() #buttonbox?
+    
+    self.grab_set() #确保鼠标键盘作用于类（Toplevel?)
+    
+    if not self.initial_focus: #含义？方法？
+      self.initial_focus=self #含义？使Toplevel窗口活动？
+    
+    self.protocol('WM_DELETE_WINDOW',self.cancel) #self.cancel?
+    
+    self.geometry('+%d+%d(parent.winfo_rootx()+50,parent.winfo_rooty()+50)
+  
